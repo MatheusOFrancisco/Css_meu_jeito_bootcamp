@@ -33,16 +33,16 @@ A proposta é aprender na prática, desenvolver projetos e construir uma base s�
 
 **Fundamentos e primeiros passos com CSS.**
 
-- [ ] Introdução ao CSS
-- [ ] Formas de adicionar CSS ao HTML
-- [ ] Seletores e especificidade
-- [ ] Cores e backgrounds
-- [ ] Fontes e tipografia
-- [ ] Unidades de medida (px, %, em, rem, vh, vw)
-- [ ] Margins e paddings
-- [ ] Borders e outlines
-- [ ] Display
-- [ ] Pseudo-classes
+- [x] Introdução ao CSS
+- [x] Formas de adicionar CSS ao HTML
+- [x] Seletores e especificidade
+- [x] Cores e backgrounds
+- [x] Fontes e tipografia
+- [x] Unidades de medida (px, %, em, rem, vh, vw)
+- [x] Margins e paddings
+- [x] Borders e outlines
+- [x] Display
+- [x] Pseudo-classes
 
 **Objetivo:** compreender como funciona a estilização de páginas web e desenvolver layouts simples.
 
@@ -52,17 +52,17 @@ A proposta é aprender na prática, desenvolver projetos e construir uma base s�
 
 **Dominando layouts flexíveis.**
 
-- [ ] Introdução ao Flexbox
-- [ ] Display Flex
-- [ ] Flex Direction
-- [ ] Justify Content
-- [ ] Align Items e Align Content
-- [ ] Flex Wrap
-- [ ] Gap
-- [ ] Flex Grow, Shrink e Basis
-- [ ] Align Self
-- [ ] Order
-- [ ] Construção de layouts com Flexbox
+- [x] Introdução ao Flexbox
+- [x] Display Flex
+- [x] Flex Direction
+- [x] Justify Content
+- [x] Align Items e Align Content
+- [x] Flex Wrap
+- [x] Gap
+- [x] Flex Grow, Shrink e Basis
+- [x] Align Self
+- [x] Order
+- [x] Aplicações práticas do Flexbox
 
 **Objetivo:** aprender a organizar elementos de maneira flexível, criando layouts adaptáveis e bem estruturados.
 
