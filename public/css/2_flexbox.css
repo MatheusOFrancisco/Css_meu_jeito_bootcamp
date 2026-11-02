@@ -1,0 +1,339 @@
+/* ESTILIZAÇÃO DA PÁGINA */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+}
+
+header {
+    background-color: #1572B6;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+nav {
+    background-color: #222;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+main {
+    width: 85%;
+    margin: 30px auto;
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #1572B6;
+    border-bottom: 2px solid #1572B6;
+    padding-bottom: 10px;
+}
+
+h3 {
+    margin-top: 25px;
+}
+
+.container {
+    display: flex;
+    background-color: #ddd;
+    padding: 10px;
+    margin: 15px 0;
+    min-height: 100px;
+}
+
+.item {
+    background-color: #1572B6;
+    color: white;
+    padding: 20px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.codigo {
+    background-color: #222;
+    color: #9cdcfe;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.codigo code {
+    color: #9cdcfe;
+}
+
+.explicacao {
+    background-color: #e8f3fc;
+    padding: 12px;
+    border-left: 4px solid #1572B6;
+    margin: 15px 0;
+}
+
+.pequeno {
+    font-size: 14px;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* CONTEUDO DA MATÉRIA */
+
+/* FLEX DIRECTION */
+
+.row {
+    flex-direction: row;
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.column-reverse {
+    flex-direction: column-reverse;
+}
+
+/* JUSTIFY CONTENT */
+
+.flex-start {
+    justify-content: flex-start;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.center {
+    justify-content: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.space-evenly {
+    justify-content: space-evenly;
+}
+
+/* ALIGN ITEMS */
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-stretch {
+    align-items: stretch;
+}
+
+.align-baseline {
+    align-items: baseline;
+}
+
+.altura {
+    height: 150px;
+}
+
+/* FLEX WRAP */
+
+.nowrap {
+    flex-wrap: nowrap;
+    width: 200px;
+}
+
+.wrap {
+    flex-wrap: wrap;
+    width: 200px;
+}
+
+.wrap-reverse {
+    flex-wrap: wrap-reverse;
+    width: 200px;
+}
+
+/* ALIGN CONTENT */
+
+.content-demo {
+    height: 280px;
+    width: 400px;
+    flex-wrap: wrap;
+}
+
+.content-start {
+    align-content: flex-start;
+}
+
+.content-end {
+    align-content: flex-end;
+}
+
+.content-center {
+    align-content: center;
+}
+
+.content-between {
+    align-content: space-between;
+}
+
+.content-around {
+    align-content: space-around;
+}
+
+.content-evenly {
+    align-content: space-evenly;
+}
+
+.content-stretch {
+    align-content: stretch;
+}
+
+/* GAP */
+
+.gap-demo {
+    gap: 20px;
+}
+
+.row-gap-demo {
+    flex-wrap: wrap;
+    row-gap: 25px;
+    column-gap: 10px;
+    width: 400px;
+}
+
+/* FLEX GROW, SHRINK AND BASIS */
+
+.grow-demo .item {
+    flex-grow: 1;
+}
+
+.grow-demo .item:nth-child(2) {
+    flex-grow: 2;
+}
+
+.shrink-demo {
+    width: 350px;
+}
+
+.shrink-demo .item {
+    width: 200px;
+    flex-shrink: 1;
+}
+
+.shrink-demo .item:nth-child(2) {
+    flex-shrink: 0;
+}
+
+.basis-demo .item {
+    flex-basis: 200px;
+}
+
+.flex-demo .item {
+    flex: 1 1 150px;
+}
+
+/* ALIGN SELF */
+
+.self-demo {
+    height: 180px;
+    align-items: center;
+}
+
+.self-demo .item:nth-child(2) {
+    align-self: flex-start;
+}
+
+.self-demo .item:nth-child(3) {
+    align-self: flex-end;
+}
+
+.self-demo .item:nth-child(4) {
+    align-self: stretch;
+}
+
+/* ORDER */
+
+.order-demo .item:nth-child(1) {
+    order: 3;
+}
+
+.order-demo .item:nth-child(2) {
+    order: 1;
+}
+
+.order-demo .item:nth-child(3) {
+    order: 2;
+}
+
+/* EXEMPLOS */
+
+.menu {
+    display: flex;
+    background-color: #ddd;
+    padding: 10px;
+    margin: 15px 0;
+    min-height: 100px;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.centralizacao{
+    display: flex;
+    background-color: #ddd;
+    padding: 10px;
+    margin: 15px 0;
+    min-height: 100px;
+    height: 180px;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.distribuicao{
+    display: flex;
+    background-color: #ddd;
+    padding: 10px;
+    margin: 15px 0;
+    min-height: 100px;
+
+    flex-wrap: wrap;
+    width: 200px;
+
+    justify-content: space-evenly;
+}

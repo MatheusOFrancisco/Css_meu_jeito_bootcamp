@@ -1,0 +1,72 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header:hover {
+    color: greenyellow;
+}
+
+#titulo {
+    font-size: 2rem;
+
+    color: rgb(255, 255, 255);
+
+    font-weight: bold;
+
+    text-align: end;
+
+    text-decoration: underline;
+
+    margin: 10pc;
+}
+
+.quadro {
+    background-image: url(https://img.magnific.com/vetores-gratis/projeto-de-fundo-branco-de-linha-ondulada-abstrata-e-suave_1017-45445.jpg?semt=ais_hybrid&w=740&q=80);
+
+    background-size: 5in;
+
+    background-repeat: repeat;
+
+    padding: 1rem;
+
+    #monalisa {
+        img {
+            border-width: 1vw;
+
+            border-style: outset;
+
+            border-radius: 1em;
+
+            border-color: #542700;
+        }
+    }
+
+    #menina {
+        border: solid #540000 0.5cm;
+
+        background-color: black;
+    }
+
+    .descricao {
+        background-color: rgba(0, 0, 0, 0.45);
+
+        line-height: 9mm;
+
+        letter-spacing: 2pt;
+
+        width: fit-content;
+    }
+}
+
+input select button{
+    size: 10rem;
+}
+
+input:focus{
+    border: 6px solid blue;
+    outline: none;
+}
+
+.desativo{
+    display: none;
+}

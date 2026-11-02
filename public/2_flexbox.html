@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp | Flexbox</title>
+    <link rel="icon" type="image/png" href="assets/imgs/css3-logo.svg">
+    <link rel="stylesheet" href="css/2_flexbox.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>CSS BOOTCAMP</h1>
+        <h2>02 - Flexbox</h2>
+        <p>Aprendendo a organizar elementos com CSS Flexbox.</p>
+    </header>
+
+    <nav>
+        <a href="#introducao">Introdução</a>
+        <a href="#direction">Direction</a>
+        <a href="#justify">Justify</a>
+        <a href="#align">Align</a>
+        <a href="#wrap">Wrap</a>
+        <a href="#grow">Grow e Shrink</a>
+        <a href="#order">Order</a>
+    </nav>
+
+    <main>
+        <section id="introducao">
+            <h2>1. Introdução ao Flexbox</h2>
+
+            <p>
+                Flexbox é um modelo de layout do CSS utilizado para organizar,
+                alinhar e distribuir elementos dentro de um contêiner.
+            </p>
+
+            <h3>Flex Container</h3>
+            <p>
+                É o elemento pai que recebe a propriedade display: flex.
+                Ele controla como seus elementos filhos serão organizados.
+            </p>
+
+            <h3>Flex Items</h3>
+            <p>
+                São os elementos filhos diretos do Flex Container,
+                que passam a seguir as regras de organização do Flexbox.
+            </p>
+
+            <div class="container">
+                <div class="item">Item 1</div>
+                <div class="item">Item 2</div>
+                <div class="item">Item 3</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+}</code></pre>
+
+            <h3>Main Axis e Cross Axis</h3>
+
+            <p>
+                O Flexbox trabalha com dois eixos principais:
+            </p>
+
+            <ul>
+                <li><strong>Main Axis:</strong> eixo principal, que acompanha a direção definida pelo flex-direction.
+                </li>
+                <li><strong>Cross Axis:</strong> eixo transversal, perpendicular ao eixo principal.</li>
+            </ul>
+
+            <div class="explicacao">
+                <strong>Importante:</strong> quando utilizamos flex-direction: row,
+                o eixo principal é horizontal. Quando utilizamos column,
+                o eixo principal passa a ser vertical.
+            </div>
+        </section>
+
+        <!-- DISPLAY FLEX -->
+
+        <section>
+            <h2>2. Display Flex</h2>
+
+            <p>
+                A propriedade display: flex transforma um elemento em um
+                Flex Container, permitindo controlar a disposição dos seus filhos.
+            </p>
+
+            <div class="container">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+}</code></pre>
+        </section>
+
+        <!-- FLEX DIRECTION -->
+
+        <section id="direction">
+            <h2>3. Flex Direction</h2>
+
+            <p>
+                Define a direção em que os elementos serão organizados
+                dentro do Flex Container.
+            </p>
+
+            <h3>Row</h3>
+            <p>Organiza os elementos horizontalmente, da esquerda para a direita.</p>
+
+            <div class="container row">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    flex-direction: row;
+}</code></pre>
+
+            <h3>Row Reverse</h3>
+            <p>Inverte a ordem visual dos elementos na direção horizontal.</p>
+
+            <div class="container row-reverse">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    flex-direction: row-reverse;
+}</code></pre>
+
+            <h3>Column</h3>
+            <p>Organiza os elementos verticalmente, de cima para baixo.</p>
+
+            <div class="container column">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    flex-direction: column;
+}</code></pre>
+
+            <h3>Column Reverse</h3>
+            <p>Inverte a ordem visual dos elementos na direção vertical.</p>
+
+            <div class="container column-reverse">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    flex-direction: column-reverse;
+}</code></pre>
+
+        </section>
+
+        <!-- JUSTIFY CONTENT -->
+
+        <section id="justify">
+            <h2>4. Justify Content</h2>
+
+            <p>
+                Controla o alinhamento e a distribuição dos elementos
+                ao longo do eixo principal.
+            </p>
+
+            <h3>Flex Start</h3>
+            <p>Posiciona os elementos no início do eixo principal.</p>
+
+            <div class="container flex-start">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    justify-content: flex-start;
+}</code></pre>
+
+            <h3>Flex End</h3>
+            <p>Posiciona os elementos no final do eixo principal.</p>
+
+            <div class="container flex-end">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    justify-content: flex-end;
+}</code></pre>
+
+            <h3>Center</h3>
+            <p>Centraliza os elementos no eixo principal.</p>
+
+            <div class="container center">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    justify-content: center;
+}</code></pre>
+
+            <h3>Space Between</h3>
+            <p>Distribui os elementos com espaços iguais entre eles.</p>
+
+            <div class="container space-between">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    justify-content: space-between;
+}</code></pre>
+
+            <h3>Space Around</h3>
+            <p>Distribui espaços ao redor dos elementos.</p>
+
+            <div class="container space-around">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    justify-content: space-around;
+}</code></pre>
+
+            <h3>Space Evenly</h3>
+            <p>Distribui espaços iguais entre os elementos e as extremidades.</p>
+
+            <div class="container space-evenly">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    justify-content: space-evenly;
+}</code></pre>
+        </section>
+
+        <!-- ALIGN ITEMS -->
+
+        <section id="align">
+            <h2>5. Align Items</h2>
+
+            <p>
+                Controla o alinhamento dos elementos no eixo transversal.
+            </p>
+
+            <h3>Flex Start</h3>
+            <div class="container altura align-start">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    align-items: flex-start;
+}</code></pre>
+
+            <h3>Flex End</h3>
+            <div class="container altura align-end">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    align-items: flex-end;
+}</code></pre>
+
+            <h3>Center</h3>
+            <div class="container altura align-center">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    align-items: center;
+}</code></pre>
+
+            <h3>Stretch</h3>
+            <p>
+                Estica os elementos para preencher o espaço disponível
+                no eixo transversal, desde que não existam restrições de tamanho.
+            </p>
+            <div class="container altura align-stretch">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    align-items: stretch;
+}</code></pre>
+
+            <h3>Baseline</h3>
+            <p>Alinha os elementos de acordo com a linha de base dos textos.</p>
+            <div class="container altura align-baseline">
+                <div class="item" style="font-size: 12px;">Pequeno</div>
+                <div class="item" style="font-size: 24px;">Grande</div>
+                <div class="item" style="font-size: 16px;">Médio</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    align-items: baseline;
+}</code></pre>
+        </section>
+
+        <!-- FLEX WRAP -->
+
+        <section id="wrap">
+            <h2>6. Flex Wrap</h2>
+
+            <p>
+                Define se os elementos podem quebrar para uma nova linha
+                quando não existe espaço suficiente no contêiner.
+            </p>
+
+            <h3>Nowrap</h3>
+            <p>Os elementos permanecem em uma única linha.</p>
+
+            <div class="container nowrap">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    flex-wrap: nowrap;
+}</code></pre>
+
+            <h3>Wrap</h3>
+            <p>Os elementos podem quebrar para novas linhas.</p>
+
+            <div class="container wrap">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    flex-wrap: wrap;
+}</code></pre>
+
+            <h3>Wrap Reverse</h3>
+            <p>Permite a quebra de linha, invertendo a direção do eixo transversal.</p>
+
+            <div class="container wrap-reverse">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    flex-wrap: wrap-reverse;
+}</code></pre>
+        </section>
+
+        <!-- ALIGN CONTENT -->
+
+        <section>
+            <h2>7. Align Content</h2>
+
+            <p>
+                Controla a distribuição das linhas de elementos no eixo transversal.
+                Sua utilização depende da existência de múltiplas linhas e de espaço
+                disponível nesse eixo.
+            </p>
+
+            <h3>Flex Start</h3>
+            <div class="container content-demo content-start">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}</code></pre>
+
+            <h3>Flex End</h3>
+            <div class="container content-demo content-end">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+}</code></pre>
+
+            <h3>Center</h3>
+            <div class="container content-demo content-center">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}</code></pre>
+
+            <h3>Space Between</h3>
+            <div class="container content-demo content-between">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}</code></pre>
+
+            <h3>Space Around</h3>
+            <div class="container content-demo content-around">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+}</code></pre>
+
+            <h3>Space Evenly</h3>
+            <div class="container content-demo content-evenly">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+}</code></pre>
+
+            <h3>Stretch</h3>
+            <div class="container content-demo content-stretch">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+}</code></pre>
+
+            <div class="explicacao">
+                <strong>Diferença importante:</strong>
+                align-items controla o alinhamento dos itens dentro de uma linha.
+                Já align-content controla a distribuição das próprias linhas.
+            </div>
+        </section>
+
+        <!-- GAP -->
+
+        <section>
+            <h2>8. Gap</h2>
+
+            <p>
+                Define o espaçamento entre os elementos, sem precisar
+                adicionar margens individualmente.
+            </p>
+
+            <h3>Gap</h3>
+            <div class="container gap-demo">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+
+            <h3>Row Gap e Column Gap</h3>
+            <p>
+                Permitem definir espaçamentos diferentes entre linhas e colunas.
+            </p>
+
+            <div class="container row-gap-demo">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    gap: 20px;
+}</code></pre>
+
+            <pre class="codigo"><code>.container {
+    row-gap: 25px;
+    column-gap: 10px;
+}</code></pre>
+        </section>
+
+        <!-- FLEX GROW, SHRINK E BASIS -->
+
+        <section id="grow">
+            <h2>9. Flex Grow, Shrink e Basis</h2>
+
+            <p>
+                Essas propriedades controlam como os elementos crescem,
+                diminuem e definem seus tamanhos iniciais dentro do Flex Container.
+            </p>
+
+            <h3>Flex Grow</h3>
+            <p>
+                Define a capacidade de um elemento crescer para ocupar
+                o espaço livre disponível.
+            </p>
+
+            <div class="container grow-demo">
+                <div class="item">Grow 1</div>
+                <div class="item">Grow 2</div>
+                <div class="item">Grow 1</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    flex-grow: 1;
+}
+
+.item:nth-child(2) {
+    flex-grow: 2;
+}</code></pre>
+
+            <div class="explicacao">
+                O segundo elemento recebe uma proporção maior do espaço
+                livre disponível em relação aos outros dois.
+            </div>
+
+            <h3>Flex Shrink</h3>
+            <p>
+                Define a capacidade de um elemento diminuir quando
+                o espaço disponível é insuficiente.
+            </p>
+
+            <div class="container shrink-demo">
+                <div class="item">Shrink 1</div>
+                <div class="item">Shrink 0</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    flex-shrink: 1;
+}
+
+.item:nth-child(2) {
+    flex-shrink: 0;
+}</code></pre>
+
+            <div class="explicacao">
+                O segundo elemento não diminui de tamanho, enquanto
+                o primeiro absorve a redução necessária.
+            </div>
+
+            <h3>Flex Basis</h3>
+            <p>
+                Define o tamanho inicial de um Flex Item antes da
+                distribuição do espaço disponível.
+            </p>
+
+            <div class="container basis-demo">
+                <div class="item">200px</div>
+                <div class="item">200px</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    flex-basis: 200px;
+}</code></pre>
+
+            <h3>Flex (Atalho)</h3>
+            <p>
+                Permite definir grow, shrink e basis em uma única declaração.
+            </p>
+
+            <div class="container flex-demo">
+                <div class="item">Item 1</div>
+                <div class="item">Item 2</div>
+                <div class="item">Item 3</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    flex: 1 1 150px;
+}
+
+/* grow | shrink | basis */</code></pre>
+        </section>
+
+        <!-- ALIGN SELF -->
+
+        <section>
+            <h2>10. Align Self</h2>
+
+            <p>
+                Permite modificar individualmente o alinhamento de um
+                Flex Item no eixo transversal, independentemente do
+                alinhamento definido pelo contêiner.
+            </p>
+
+            <div class="container self-demo">
+                <div class="item">Center</div>
+                <div class="item">Start</div>
+                <div class="item">End</div>
+                <div class="item">Stretch</div>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    display: flex;
+    align-items: center;
+}
+
+.item:nth-child(2) {
+    align-self: flex-start;
+}
+
+.item:nth-child(3) {
+    align-self: flex-end;
+}
+
+.item:nth-child(4) {
+    align-self: stretch;
+}</code></pre>
+        </section>
+
+        <!-- ORDER -->
+
+        <section id="order">
+            <h2>11. Order</h2>
+
+            <p>
+                Permite modificar a ordem visual dos elementos dentro
+                do Flex Container sem alterar a estrutura original do HTML.
+            </p>
+
+            <div class="container order-demo">
+                <div class="item">Item 1</div>
+                <div class="item">Item 2</div>
+                <div class="item">Item 3</div>
+            </div>
+
+            <pre class="codigo"><code>.item:nth-child(1) {
+    order: 3;
+}
+
+.item:nth-child(2) {
+    order: 1;
+}
+
+.item:nth-child(3) {
+    order: 2;
+}</code></pre>
+
+            <div class="explicacao">
+                Os elementos são exibidos na ordem definida pela propriedade
+                order. Por padrão, todos possuem o valor 0.
+                Valores menores aparecem antes dos maiores.
+            </div>
+
+            <p class="pequeno">
+                Atenção: a propriedade order altera a ordem visual,
+                mas não modifica a ordem original dos elementos no HTML
+                nem necessariamente a ordem de navegação por teclado.
+            </p>
+        </section>
+
+        <!-- APLICAÇÕES -->
+
+        <section>
+            <h2>12. Aplicações práticas do Flexbox</h2>
+
+            <p>
+                O Flexbox pode ser utilizado em diversas situações
+                durante o desenvolvimento de interfaces.
+            </p>
+
+            <h3>Exemplo: Menu de navegação</h3>
+
+            <div class="menu">
+                <div class="item">LOGO</div>
+                <div class="item">Início</div>
+                <div class="item">Sobre</div>
+                <div class="item">Contato</div>
+            </div>
+
+            <pre class="codigo"><code>.menu {
+    display: flex;
+    background-color: #ddd;
+    padding: 10px;
+    margin: 15px 0;
+    min-height: 100px;
+
+    justify-content: space-between;
+
+    align-items: center;
+}</code></pre>
+
+            <h3>Exemplo: Centralização de conteúdo</h3>
+
+            <div class="centralizacao">
+                <div class="item">Conteúdo centralizado</div>
+            </div>
+
+            <pre class="codigo"><code>.centralizacao{
+    display: flex;
+    background-color: #ddd;
+    padding: 10px;
+    margin: 15px 0;
+    min-height: 100px;
+    height: 180px;
+
+    justify-content: center;
+
+    align-items: center;
+}</code></pre>
+
+            <h3>Exemplo: Distribuição de cards</h3>
+
+            <div class="container wrap space-evenly">
+                <div class="item">Card 1</div>
+                <div class="item">Card 2</div>
+                <div class="item">Card 3</div>
+            </div>
+
+            <pre class="codigo"><code>.distribuicao{
+    display: flex;
+    background-color: #ddd;
+    padding: 10px;
+    margin: 15px 0;
+    min-height: 100px;
+
+    flex-wrap: wrap;
+    width: 200px;
+
+    justify-content: space-evenly;
+}</code></pre>
+
+            <div class="explicacao">
+                Esses exemplos demonstram como diferentes propriedades
+                podem ser combinadas para construir componentes e layouts
+                de uma interface.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>CSS Bootcamp | Nível 02 - Flexbox</p>
+        <p>Aprendendo CSS, uma propriedade por vez.</p>
+    </footer>
+
+</body>
+
+</html>
