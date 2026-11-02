@@ -1,78 +1,817 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootcamp | básicos</title>
+    <title>Bootcamp | Básico</title>
     <link rel="icon" type="image/png" href="assets/imgs/css3-logo.svg">
     <link rel="stylesheet" href="css/1_basicos.css">
 </head>
-<style>
-    /* Internal CSS */
 
-    header{
-        background-color: #fffafa;
+<body>
 
-        width: 100%;
-        height: 8vh;
-
-        font-size: 40px;
-        color: crimson;
-    }
-</style>
-<body style="background-color: #222e3e; padding: 0; margin: 0; height: fit-content;"> <!-- Inline CSS -->
     <header>
-        Museu de artes!
+        <h1>CSS BOOTCAMP</h1>
+        <h2>01 - Fundamentos do CSS</h2>
+        <p>Aprendendo os primeiros passos da estilização web.</p>
     </header>
-    
-    <section>
-        <div id="titulo">
-            Bem vindo ao meu museu de arte!
-        </div>
-            
-        <div class="quadro">
-            <div id="monalisa">
-                <img src="assets/imgs/Mona_Lisa.jpg" alt="">
+
+    <nav>
+        <a href="#introducao">Introdução</a>
+        <a href="#seletores">Seletores</a>
+        <a href="#cores">Cores</a>
+        <a href="#fontes">Fontes</a>
+        <a href="#unidades">Unidades</a>
+        <a href="#display">Display</a>
+        <a href="#pseudo">Pseudo-classes</a>
+    </nav>
+
+    <main>
+
+        <!-- INTRODUÇÃO -->
+
+        <section id="introducao">
+            <h2>1. Introdução ao CSS</h2>
+
+            <p>
+                CSS (Cascading Style Sheets) é uma linguagem utilizada
+                para definir a apresentação visual de documentos HTML.
+            </p>
+
+            <p>
+                Enquanto o HTML organiza o conteúdo, o CSS controla
+                como esse conteúdo será apresentado ao usuário.
+            </p>
+
+            <h3>HTML</h3>
+
+            <pre class="codigo"><code>&lt;h1&gt;Olá, mundo!&lt;/h1&gt;
+&lt;p&gt;Minha primeira página.&lt;/p&gt;</code></pre>
+
+            <h3>CSS</h3>
+
+            <pre class="codigo"><code>h1 {
+    color: blue;
+    font-size: 30px;
+}
+
+p {
+    color: gray;
+}</code></pre>
+
+            <h3>Resultado</h3>
+
+            <div class="demonstracao">
+                <h1 style="color: blue; font-size: 30px;">Olá, mundo!</h1>
+                <p style="color: gray;">Minha primeira página.</p>
             </div>
 
-            <div class="descricao">
-                A Mona Lisa (também conhecida como La Gioconda)<br>é uma famosa pintura do artista renascentista Leonardo da Vinci
-            </div>
-        </div>
-            
-        <div class="quadro">
-            <div id="menina">
-                <img src="https://static.wixstatic.com/media/d61ae6_7b04d4089f774db38bfa284f71540cc2~mv2.jpg/v1/fill/w_685,h_979,al_c,q_85,enc_avif,quality_auto/d61ae6_7b04d4089f774db38bfa284f71540cc2~mv2.jpg" alt="">
-            </div>
+            <h3>Formas de adicionar CSS ao HTML</h3>
 
-            <div class="descricao">
-                Moça com Brinco de Pérola (Meisje met de parel, em neerlandês)<br>é uma das obras mais famosas do pintor holandês Johannes Vermeer, criada por volta de 1665.
-            </div>
-        </div>
-    </section>
+            <p>
+                Existem três maneiras principais de aplicar CSS
+                a um documento HTML.
+            </p>
 
-    <hr>
+            <h3>Inline CSS</h3>
 
-    DIGITE UM QUADRO QUE DESEJA ADICIONAR: <input id="ipt_nome_quadro" type="text" class="">
-    <br>
-    SELECIONE O MOTIVO: 
-    <select name="" id="slc_motivo">
-        <option value="">Gosto da arte</option>
-        <option value="">Gosto da historia</option>
-        <option value="">Gosto do pintor</option>
-        <option value="">Outro</option>
-    </select>
-    <br>
-    <button onclick="cadastrar()">CADASTRAR PEDIDO</button>
-    <div id="div_exibir"></div>
-</body>
-<script>
-    // EXTRA: COMO MUDAR A CLASSE DE UM ITEM PELO HTML
-    function cadastrar(){
-        let nome = ipt_nome_quadro.value
-        let motivo = slc_motivo.value
-        ipt_nome_quadro.className = 'desativo'
-        slc_motivo.className = 'desativo'
+            <p>
+                O estilo é aplicado diretamente na tag HTML,
+                utilizando o atributo style.
+            </p>
+
+            <pre class="codigo"><code>&lt;p style="color: red;"&gt;
+    Texto vermelho
+&lt;/p&gt;</code></pre>
+
+            <h3>Internal CSS</h3>
+
+            <p>
+                O CSS é escrito dentro da tag style, localizada
+                geralmente no head do documento.
+            </p>
+
+            <pre class="codigo"><code>&lt;style&gt;
+    p {
+        color: red;
     }
-</script>
+&lt;/style&gt;</code></pre>
+
+            <h3>External CSS</h3>
+
+            <p>
+                Os estilos são escritos em um arquivo separado,
+                conectado ao HTML através da tag link.
+            </p>
+
+            <pre class="codigo"><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+
+            <div class="explicacao">
+                <strong>Recomendação:</strong> utilizar CSS externo
+                facilita a organização e manutenção dos projetos,
+                principalmente quando existem várias páginas.
+            </div>
+        </section>
+
+        <!-- SELETORES -->
+
+        <section id="seletores">
+            <h2>2. Seletores e Especificidade</h2>
+
+            <p>
+                Os seletores identificam quais elementos HTML
+                receberão determinadas propriedades CSS.
+            </p>
+
+            <h3>Seletor Universal (*)</h3>
+
+            <p>Seleciona todos os elementos da página.</p>
+
+            <pre class="codigo"><code>* {
+    margin: 0;
+    padding: 0;
+}</code></pre>
+
+            <h3>Seletor por Elemento</h3>
+
+            <p>Seleciona elementos pelo nome da tag HTML.</p>
+
+            <div class="demonstracao">
+                <p style="color: blue;">Este é um parágrafo.</p>
+                <h3 style="color: blue;">Este é um título.</h3>
+            </div>
+
+            <pre class="codigo"><code>p {
+    color: blue;
+}
+
+h3 {
+    color: blue;
+}</code></pre>
+
+            <h3>Seletor por Classe (.)</h3>
+
+            <p>
+                Seleciona elementos que possuem determinada classe.
+                Uma classe pode ser reutilizada em vários elementos.
+            </p>
+
+            <div class="demonstracao">
+                <p class="item">Elemento com classe item</p>
+                <p class="item">Outro elemento com a mesma classe</p>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    background-color: blue;
+    color: white;
+}</code></pre>
+
+            <h3>Seletor por ID (#)</h3>
+
+            <p>
+                Seleciona um elemento através do seu identificador.
+            </p>
+
+            <div class="demonstracao">
+                <p id="exemplo-id">Elemento com ID exemplo-id</p>
+            </div>
+
+            <pre class="codigo"><code>#exemplo-id {
+    color: blue;
+    font-weight: bold;
+}</code></pre>
+
+            <h3>Especificidade</h3>
+
+            <p>
+                A especificidade determina qual regra CSS terá prioridade
+                quando diferentes seletores aplicarem valores conflitantes.
+            </p>
+
+            <p>De maneira geral, a prioridade é:</p>
+
+            <ol>
+                <li>Estilos inline.</li>
+                <li>Seletores de ID.</li>
+                <li>Seletores de classe, atributos e pseudo-classes.</li>
+                <li>Seletores de elementos e pseudo-elementos.</li>
+            </ol>
+
+            <pre class="codigo"><code>p {
+    color: blue;
+}
+
+.texto {
+    color: green;
+}
+
+#principal {
+    color: red;
+}</code></pre>
+
+            <div class="explicacao">
+                Se um parágrafo possuir a classe texto e o ID principal,
+                a cor vermelha será aplicada, pois o seletor de ID
+                possui maior especificidade.
+            </div>
+        </section>
+
+        <!-- CORES -->
+
+        <section id="cores">
+            <h2>3. Cores e Backgrounds</h2>
+
+            <p>
+                O CSS permite controlar as cores dos textos,
+                fundos e outros elementos de uma página.
+            </p>
+
+            <h3>Color</h3>
+
+            <p>Define a cor do texto.</p>
+
+            <div class="demonstracao">
+                <p style="color: red;">Texto vermelho.</p>
+                <p style="color: blue;">Texto azul.</p>
+            </div>
+
+            <pre class="codigo"><code>p {
+    color: red;
+}</code></pre>
+
+            <h3>Background Color</h3>
+
+            <p>Define a cor de fundo de um elemento.</p>
+
+            <div class="demonstracao">
+                <div class="item">Fundo azul</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    background-color: #1572B6;
+}</code></pre>
+
+            <h3>Representação de cores</h3>
+
+            <p>Existem diferentes formas de representar cores no CSS.</p>
+
+            <div class="demonstracao">
+                <div class="item cor-nome">Tomato</div>
+                <div class="item cor-hex">HEX</div>
+                <div class="item cor-rgb">RGB</div>
+                <div class="item cor-rgba">RGBA</div>
+            </div>
+
+            <pre class="codigo"><code>color: tomato;
+
+color: #2B3B92;
+
+color: rgb(30, 150, 100);
+
+color: rgba(30, 150, 100, 0.5);</code></pre>
+
+            <h3>Background Image</h3>
+
+            <p>
+                Permite utilizar imagens como plano de fundo
+                de um elemento.
+            </p>
+
+            <div class="demonstracao background-imagem">
+                <h3>Imagem de fundo</h3>
+            </div>
+
+            <pre class="codigo"><code>.container {
+    background-image: url("imagem.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}</code></pre>
+
+            <ul>
+                <li><strong>background-size:</strong> controla o tamanho da imagem.</li>
+                <li><strong>background-position:</strong> define a posição da imagem.</li>
+                <li><strong>background-repeat:</strong> controla sua repetição.</li>
+            </ul>
+        </section>
+
+        <!-- FONTES -->
+
+        <section id="fontes">
+            <h2>4. Fontes e Tipografia</h2>
+
+            <p>
+                As propriedades de tipografia controlam a aparência
+                dos textos, incluindo família, tamanho, espessura
+                e alinhamento.
+            </p>
+
+            <h3>Font Family</h3>
+
+            <p class="fonte-demo">
+                Este texto utiliza a fonte Georgia.
+            </p>
+
+            <pre class="codigo"><code>p {
+    font-family: Georgia, serif;
+}</code></pre>
+
+            <h3>Font Size</h3>
+
+            <p class="tamanho-demo">
+                Este texto possui 24 pixels.
+            </p>
+
+            <pre class="codigo"><code>p {
+    font-size: 24px;
+}</code></pre>
+
+            <h3>Font Weight</h3>
+
+            <p class="peso-demo">
+                Este texto possui uma espessura maior.
+            </p>
+
+            <pre class="codigo"><code>p {
+    font-weight: bold;
+}</code></pre>
+
+            <h3>Font Style</h3>
+
+            <p class="estilo-demo">
+                Este texto está em itálico.
+            </p>
+
+            <pre class="codigo"><code>p {
+    font-style: italic;
+}</code></pre>
+
+            <h3>Text Align</h3>
+
+            <div class="demonstracao">
+                <p class="alinhamento-demo">
+                    Texto centralizado.
+                </p>
+            </div>
+
+            <pre class="codigo"><code>p {
+    text-align: center;
+}</code></pre>
+
+            <h3>Text Decoration</h3>
+
+            <p class="decoracao-demo">
+                Texto sublinhado.
+            </p>
+
+            <pre class="codigo"><code>p {
+    text-decoration: underline;
+}</code></pre>
+
+            <h3>Line Height</h3>
+
+            <p class="altura-linha-demo">
+                Este texto possui um espaçamento maior entre suas linhas.<br>
+                É possível perceber que as linhas ficam mais afastadas,<br>
+                facilitando a leitura de textos maiores.
+            </p>
+
+            <pre class="codigo"><code>p {
+    line-height: 2;
+}</code></pre>
+
+            <h3>Letter Spacing</h3>
+
+            <p class="espacamento-demo">
+                ESPAÇAMENTO
+            </p>
+
+            <pre class="codigo"><code>p {
+    letter-spacing: 5px;
+}</code></pre>
+        </section>
+
+        <!-- UNIDADES -->
+
+        <section id="unidades">
+            <h2>5. Unidades de Medida</h2>
+
+            <p>
+                As unidades de medida definem dimensões, tamanhos
+                e espaçamentos dos elementos.
+            </p>
+
+            <h3>Pixels (px)</h3>
+
+            <p>Unidade absoluta de referência do CSS.</p>
+
+            <div class="demonstracao">
+                <div class="item pixel-demo">200px</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    width: 200px;
+}</code></pre>
+
+            <h3>Porcentagem (%)</h3>
+
+            <p>
+                Define um valor relativo às dimensões de referência
+                estabelecidas pela propriedade.
+            </p>
+
+            <div class="demonstracao">
+                <div class="item porcentagem-demo">50%</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    width: 50%;
+}</code></pre>
+
+            <h3>Em (em)</h3>
+
+            <p>
+                Unidade relativa ao tamanho da fonte do elemento
+                de referência.
+            </p>
+
+            <div class="demonstracao">
+                <p class="item em-demo">2em</p>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    font-size: 2em;
+}</code></pre>
+
+            <h3>Rem (rem)</h3>
+
+            <p>
+                Unidade relativa ao tamanho da fonte do elemento raiz,
+                geralmente a tag html.
+            </p>
+
+            <div class="demonstracao">
+                <p class="item rem-demo">2rem</p>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    font-size: 2rem;
+}</code></pre>
+
+            <h3>Viewport Width (vw)</h3>
+
+            <p>
+                Representa uma porcentagem da largura da área visível
+                do navegador.
+            </p>
+
+            <div class="demonstracao">
+                <div class="item vw-demo">50vw</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    width: 50vw;
+}</code></pre>
+
+            <h3>Viewport Height (vh)</h3>
+
+            <p>
+                Representa uma porcentagem da altura da área visível
+                do navegador.
+            </p>
+
+            <div class="demonstracao">
+                <div class="item vh-demo">15vh</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    height: 15vh;
+}</code></pre>
+        </section>
+
+        <!-- MARGIN E PADDING -->
+
+        <section>
+            <h2>6. Margin e Padding</h2>
+
+            <p>
+                Essas propriedades controlam os espaçamentos externos
+                e internos dos elementos.
+            </p>
+
+            <h3>Margin</h3>
+
+            <p>
+                Define o espaçamento externo, separando um elemento
+                dos outros elementos ao seu redor.
+            </p>
+
+            <div class="demonstracao">
+                <div class="item">Elemento original</div>
+                <div class="item margin-demo">Margin de 30px</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    margin: 30px;
+}</code></pre>
+
+            <h3>Padding</h3>
+
+            <p>
+                Define o espaçamento interno entre o conteúdo
+                e a borda do elemento.
+            </p>
+
+            <div class="demonstracao">
+                <div class="item">Sem padding adicional</div>
+                <div class="item padding-demo">Padding de 30px</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    padding: 30px;
+}</code></pre>
+
+            <h3>Direções de espaçamento</h3>
+
+            <p>
+                Margin e Padding podem ser configurados individualmente
+                para cada lado.
+            </p>
+
+            <pre class="codigo"><code>margin-top: 10px;
+margin-right: 20px;
+margin-bottom: 30px;
+margin-left: 40px;
+
+padding-top: 10px;
+padding-right: 20px;
+padding-bottom: 30px;
+padding-left: 40px;</code></pre>
+        </section>
+
+        <!-- BORDERS E OUTLINES -->
+
+        <section>
+            <h2>7. Borders e Outlines</h2>
+
+            <p>
+                Permitem adicionar contornos aos elementos,
+                controlando sua espessura, cor e aparência.
+            </p>
+
+            <h3>Border</h3>
+
+            <div class="demonstracao">
+                <div class="item border-demo">Borda sólida</div>
+                <div class="item border-dashed">Borda tracejada</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    border: 4px solid blue;
+}
+
+.item {
+    border: 4px dashed blue;
+}</code></pre>
+
+            <h3>Border Radius</h3>
+
+            <p>Permite arredondar os cantos de um elemento.</p>
+
+            <div class="demonstracao">
+                <div class="item border-radius">Cantos arredondados</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    border: 3px solid blue;
+    border-radius: 20px;
+}</code></pre>
+
+            <h3>Outline</h3>
+
+            <p>
+                Adiciona um contorno externo ao elemento,
+                sem ocupar espaço no layout.
+            </p>
+
+            <div class="demonstracao">
+                <div class="item outline-demo">Outline</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    border: 2px solid black;
+    outline: 4px solid blue;
+}</code></pre>
+        </section>
+
+        <!-- DISPLAY E POSICIONAMENTO -->
+
+        <section id="display">
+            <h2>6. Display e Posicionamento</h2>
+
+            <p>
+                A propriedade display determina como um elemento
+                participa do fluxo de layout da página.
+            </p>
+
+            <h3>Display Block</h3>
+
+            <p>
+                Ocupa uma linha inteira por padrão e permite
+                controlar largura e altura.
+            </p>
+
+            <div class="demonstracao">
+                <div class="item block-demo">Block 1</div>
+                <div class="item block-demo">Block 2</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    display: block;
+}</code></pre>
+
+            <h3>Display Inline</h3>
+
+            <p>
+                Ocupa somente o espaço necessário ao conteúdo
+                e não aceita width e height da mesma forma
+                que elementos block.
+            </p>
+
+            <div class="demonstracao">
+                <span class="item inline-demo">Inline 1</span>
+                <span class="item inline-demo">Inline 2</span>
+                <span class="item inline-demo">Inline 3</span>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    display: inline;
+}</code></pre>
+
+            <h3>Display Inline Block</h3>
+
+            <p>
+                Permite manter elementos na mesma linha,
+                mas aceitando dimensões como width e height.
+            </p>
+
+            <div class="demonstracao">
+                <div class="item inline-block-demo">Item 1</div>
+                <div class="item inline-block-demo">Item 2</div>
+                <div class="item inline-block-demo">Item 3</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    display: inline-block;
+    width: 120px;
+}</code></pre>
+
+            <h3>Display None</h3>
+
+            <p>
+                Oculta o elemento e remove seu espaço do fluxo
+                de layout da página.
+            </p>
+
+            <div class="demonstracao">
+                <div class="item">Elemento visível</div>
+                <div class="item none-demo">Elemento oculto</div>
+                <div class="item">Outro elemento visível</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    display: none;
+}</code></pre>
+        </section>
+
+        <!-- PSEUDO-CLASSES -->
+
+        <section id="pseudo">
+            <h2>7. Pseudo-classes</h2>
+
+            <p>
+                São recursos utilizados para estilizar elementos
+                em situações específicas.
+            </p>
+
+            <h3>Pseudo-classes</h3>
+
+            <p>
+                Permitem aplicar estilos quando um elemento
+                apresenta determinada condição ou estado.
+            </p>
+
+            <h3>:hover</h3>
+
+            <p>
+                Aplica estilos quando o cursor está sobre um elemento.
+            </p>
+
+            <div class="demonstracao">
+                <div class="item hover-demo">Passe o mouse aqui</div>
+            </div>
+
+            <pre class="codigo"><code>.item:hover {
+    background-color: blue;
+}</code></pre>
+
+            <h3>:active</h3>
+
+            <p>
+                Aplica estilos enquanto um elemento está sendo ativado,
+                como durante um clique.
+            </p>
+
+            <div class="demonstracao">
+                <div class="item active-demo">Clique e segure</div>
+            </div>
+
+            <pre class="codigo"><code>.item:active {
+    background-color: orange;
+}</code></pre>
+
+            <h3>:focus</h3>
+
+            <p>
+                Aplica estilos quando um elemento recebe foco,
+                como um campo de formulário.
+            </p>
+
+            <div class="demonstracao">
+                <input class="focus-demo" type="text" placeholder="Clique aqui">
+            </div>
+
+            <pre class="codigo"><code>input:focus {
+    background-color: lightblue;
+    outline: 2px solid blue;
+}</code></pre>
+
+            <h3>:first-child</h3>
+
+            <p>
+                Seleciona um elemento que seja o primeiro filho
+                de seu elemento pai.
+            </p>
+
+            <div class="demonstracao first-demo">
+                <p>Primeiro parágrafo</p>
+                <p>Segundo parágrafo</p>
+                <p>Terceiro parágrafo</p>
+            </div>
+
+            <pre class="codigo"><code>p:first-child {
+    color: blue;
+}</code></pre>
+
+            <h3>:last-child</h3>
+
+            <p>
+                Seleciona um elemento que seja o último filho
+                de seu elemento pai.
+            </p>
+
+            <div class="demonstracao last-demo">
+                <p>Primeiro parágrafo</p>
+                <p>Segundo parágrafo</p>
+                <p>Último parágrafo</p>
+            </div>
+
+            <pre class="codigo"><code>p:last-child {
+    color: blue;
+}</code></pre>
+        </section>
+
+        <!-- CONCLUSÃO -->
+
+        <section>
+            <h2>🎯 Conclusão</h2>
+
+            <p>
+                Neste nível, foram apresentados os fundamentos do CSS,
+                desde sua integração com HTML até os principais recursos
+                de estilização e posicionamento.
+            </p>
+
+            <p>
+                Compreender esses conceitos é essencial para desenvolver
+                páginas organizadas e controlar a apresentação visual
+                dos elementos.
+            </p>
+
+            <p>
+                Esses conhecimentos servirão como base para os próximos
+                níveis do bootcamp, nos quais serão exploradas técnicas
+                mais específicas de construção de layouts e interfaces.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>CSS Bootcamp | Nível 01 - Básico</p>
+        <p>Aprendendo CSS, uma propriedade por vez.</p>
+    </footer>
+
+</body>
 </html>

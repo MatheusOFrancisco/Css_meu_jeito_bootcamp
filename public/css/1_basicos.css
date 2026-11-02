@@ -1,72 +1,259 @@
-* {
-    font-family: Arial, Helvetica, sans-serif;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
 }
 
-header:hover {
-    color: greenyellow;
+header {
+    background-color: #1572B6;
+    color: white;
+    padding: 25px;
+    text-align: center;
 }
 
-#titulo {
-    font-size: 2rem;
+nav {
+    background-color: #222;
+    padding: 15px;
+    text-align: center;
+}
 
-    color: rgb(255, 255, 255);
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
 
+main {
+    width: 85%;
+    margin: 30px auto;
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #1572B6;
+    border-bottom: 2px solid #1572B6;
+    padding-bottom: 10px;
+}
+
+h3 {
+    margin-top: 25px;
+}
+
+.demonstracao {
+    background-color: #ddd;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+.item {
+    background-color: #1572B6;
+    color: white;
+    padding: 15px;
+    margin: 5px;
+    text-align: center;
+}
+
+.codigo {
+    background-color: #222;
+    color: #9cdcfe;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.codigo code {
+    color: #9cdcfe;
+}
+
+.explicacao {
+    background-color: #e8f3fc;
+    padding: 12px;
+    border-left: 4px solid #1572B6;
+    margin: 15px 0;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* CORES E BACKGROUNDS */
+
+.cor-nome {
+    background-color: tomato;
+}
+
+.cor-hex {
+    background-color: #2B3B92;
+}
+
+.cor-rgb {
+    background-color: rgb(30, 150, 100);
+}
+
+.cor-rgba {
+    background-color: rgba(30, 150, 100, 0.5);
+}
+
+.background-imagem {
+    background-image: url("https://img.magnific.com/fotos-gratis/cachoeira-de-erawan-na-tailandia-bela-cachoeira-com-piscina-esmeralda-na-natureza_335224-776.jpg?semt=ais_hybrid&w=740&q=80");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 180px;
+    color: white;
+    text-align: center;
+    padding: 60px 10px;
+}
+
+/* FONTES E TIPOGRAFIA */
+
+.fonte-demo {
+    font-family: Georgia, serif;
+}
+
+.tamanho-demo {
+    font-size: 24px;
+}
+
+.peso-demo {
     font-weight: bold;
+}
 
-    text-align: end;
+.estilo-demo {
+    font-style: italic;
+}
 
+.alinhamento-demo {
+    text-align: center;
+}
+
+.decoracao-demo {
     text-decoration: underline;
-
-    margin: 10pc;
 }
 
-.quadro {
-    background-image: url(https://img.magnific.com/vetores-gratis/projeto-de-fundo-branco-de-linha-ondulada-abstrata-e-suave_1017-45445.jpg?semt=ais_hybrid&w=740&q=80);
-
-    background-size: 5in;
-
-    background-repeat: repeat;
-
-    padding: 1rem;
-
-    #monalisa {
-        img {
-            border-width: 1vw;
-
-            border-style: outset;
-
-            border-radius: 1em;
-
-            border-color: #542700;
-        }
-    }
-
-    #menina {
-        border: solid #540000 0.5cm;
-
-        background-color: black;
-    }
-
-    .descricao {
-        background-color: rgba(0, 0, 0, 0.45);
-
-        line-height: 9mm;
-
-        letter-spacing: 2pt;
-
-        width: fit-content;
-    }
+.altura-linha-demo {
+    line-height: 2;
 }
 
-input select button{
-    size: 10rem;
+.espacamento-demo {
+    letter-spacing: 5px;
 }
 
-input:focus{
-    border: 6px solid blue;
-    outline: none;
+/* UNIDADES DE MEDIDA */
+
+.pixel-demo {
+    width: 200px;
+    background-color: #1572B6;
 }
 
-.desativo{
+.porcentagem-demo {
+    width: 50%;
+    background-color: #2B3B92;
+}
+
+.em-demo {
+    font-size: 2em;
+    background-color: #1572B6;
+}
+
+.rem-demo {
+    font-size: 2rem;
+    background-color: #2B3B92;
+}
+
+.vw-demo {
+    width: 50vw;
+    background-color: #1572B6;
+}
+
+.vh-demo {
+    height: 15vh;
+    background-color: #2B3B92;
+}
+
+/* MARGIN E PADDING */
+
+.margin-demo {
+    margin: 30px;
+    background-color: #1572B6;
+}
+
+.padding-demo {
+    padding: 30px;
+    background-color: #2B3B92;
+}
+
+/* BORDERS E OUTLINES */
+
+.border-demo {
+    border: 4px solid #1572B6;
+}
+
+.border-dashed {
+    border: 4px dashed #1572B6;
+}
+
+.border-radius {
+    border: 3px solid #1572B6;
+    border-radius: 20px;
+}
+
+.outline-demo {
+    border: 2px solid #222;
+    outline: 4px solid #1572B6;
+}
+
+/* DISPLAY */
+
+.block-demo {
+    display: block;
+}
+
+.inline-demo {
+    display: inline;
+}
+
+.inline-block-demo {
+    display: inline-block;
+    width: 120px;
+}
+
+.none-demo {
     display: none;
+}
+
+/* PSEUDO-CLASSES */
+
+.hover-demo:hover {
+    background-color: #2B3B92;
+}
+
+.active-demo:active {
+    background-color: #e09c32;
+}
+
+.focus-demo:focus {
+    background-color: #e8f3fc;
+    outline: 2px solid #1572B6;
+}
+
+.first-demo p:first-child {
+    color: #1572B6;
+    font-weight: bold;
+}
+
+.last-demo p:last-child {
+    color: #1572B6;
+    font-weight: bold;
 }

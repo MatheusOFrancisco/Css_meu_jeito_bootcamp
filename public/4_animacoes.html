@@ -1,0 +1,705 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp | Animações</title>
+    <link rel="icon" type="image/png" href="assets/imgs/css3-logo.svg">
+    <link rel="stylesheet" href="css/4_animacoes.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>CSS BOOTCAMP</h1>
+        <h2>04 - Animações</h2>
+        <p>Aprendendo a criar movimentos e interações com CSS.</p>
+    </header>
+
+    <nav>
+        <a href="#introducao">Introdução</a>
+        <a href="#transitions">Transitions</a>
+        <a href="#transform">Transform</a>
+        <a href="#keyframes">Keyframes</a>
+        <a href="#animation">Animation</a>
+        <a href="#timing">Timing</a>
+        <a href="#hover">Hover</a>
+        <a href="#responsividade">Responsividade</a>
+    </nav>
+
+    <main>
+
+        <!-- INTRODUÇÃO -->
+
+        <section id="introducao">
+            <h2>1. Introdução às animações CSS</h2>
+
+            <p>
+                As animações em CSS permitem modificar propriedades visuais
+                dos elementos ao longo do tempo, criando movimentos e efeitos
+                que tornam uma página mais interativa.
+            </p>
+
+            <h3>Transitions</h3>
+
+            <p>
+                São utilizadas para criar transições suaves entre dois estados
+                de um elemento, como uma mudança de cor ao passar o mouse.
+            </p>
+
+            <h3>Animations</h3>
+
+            <p>
+                Permitem criar animações personalizadas, com diferentes etapas,
+                durações e repetições, utilizando a regra @keyframes.
+            </p>
+
+            <div class="explicacao">
+                <strong>Diferença:</strong> Transitions geralmente dependem
+                de uma mudança de estado, enquanto Animations podem ser
+                executadas automaticamente e possuir várias etapas.
+            </div>
+        </section>
+
+        <!-- TRANSITIONS -->
+
+        <section id="transitions">
+            <h2>2. Transitions</h2>
+
+            <p>
+                A propriedade transition controla como uma mudança de
+                propriedade CSS acontece ao longo do tempo.
+            </p>
+
+            <h3>Transition Property</h3>
+
+            <p>
+                Define qual propriedade receberá a transição.
+                Neste exemplo, a cor de fundo muda suavemente.
+            </p>
+
+            <div class="demonstracao transition-demo">
+                <div class="item">Passe o mouse</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+.item:hover {
+    background-color: orange;
+}</code></pre>
+
+            <h3>Transition Duration</h3>
+
+            <p>
+                Determina quanto tempo a transição levará para terminar.
+                Compare os dois elementos.
+            </p>
+
+            <div class="demonstracao duration-demo">
+                <div class="item">0.2s</div>
+                <div class="item">1s</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    transition-duration: 0.2s;
+}
+
+.item:nth-child(2) {
+    transition-duration: 1s;
+}</code></pre>
+
+            <h3>Transition Timing Function</h3>
+
+            <p>
+                Controla como a velocidade da transição varia durante
+                sua execução.
+            </p>
+
+            <h3>Transition Delay</h3>
+
+            <p>
+                Define quanto tempo o navegador aguardará antes de iniciar
+                a transição.
+            </p>
+
+            <div class="demonstracao delay-demo">
+                <div class="item">Imediato</div>
+                <div class="item">1 segundo</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    transition: transform 0.5s;
+}
+
+.item:nth-child(2) {
+    transition-delay: 1s;
+}</code></pre>
+
+            <h3>Transition (Atalho)</h3>
+
+            <pre class="codigo"><code>.item {
+    transition: background-color 0.5s ease 0.2s;
+}
+
+/* propriedade | duração | velocidade | atraso */</code></pre>
+        </section>
+
+        <!-- TRANSFORM -->
+
+        <section id="transform">
+            <h2>3. Transform</h2>
+
+            <p>
+                A propriedade transform permite modificar visualmente
+                um elemento sem alterar a posição que ele ocupa no fluxo
+                normal do documento.
+            </p>
+
+            <h3>Translate</h3>
+
+            <p>
+                Desloca o elemento horizontalmente e verticalmente.
+            </p>
+
+            <div class="demonstracao translate-demo">
+                <div class="item">Passe o mouse</div>
+            </div>
+
+            <pre class="codigo"><code>.item:hover {
+    transform: translate(20px, -15px);
+}</code></pre>
+
+            <h3>Scale</h3>
+
+            <p>
+                Aumenta ou diminui o tamanho visual do elemento.
+            </p>
+
+            <div class="demonstracao scale-demo">
+                <div class="item">Passe o mouse</div>
+            </div>
+
+            <pre class="codigo"><code>.item:hover {
+    transform: scale(1.3);
+}</code></pre>
+
+            <h3>Rotate</h3>
+
+            <p>
+                Rotaciona o elemento de acordo com o ângulo definido.
+            </p>
+
+            <div class="demonstracao rotate-demo">
+                <div class="item">Passe o mouse</div>
+            </div>
+
+            <pre class="codigo"><code>.item:hover {
+    transform: rotate(45deg);
+}</code></pre>
+
+            <h3>Skew</h3>
+
+            <p>
+                Inclina o elemento horizontalmente ou verticalmente.
+            </p>
+
+            <div class="demonstracao skew-demo">
+                <div class="item">Passe o mouse</div>
+            </div>
+
+            <pre class="codigo"><code>.item:hover {
+    transform: skew(20deg);
+}</code></pre>
+
+            <h3>Transformações combinadas</h3>
+
+            <p>
+                É possível combinar diferentes transformações em uma
+                única declaração.
+            </p>
+
+            <div class="demonstracao combine-demo">
+                <div class="item">Passe o mouse</div>
+            </div>
+
+            <pre class="codigo"><code>.item:hover {
+    transform: translateY(-10px) rotate(10deg) scale(1.1);
+}</code></pre>
+        </section>
+
+        <!-- KEYFRAMES -->
+
+        <section id="keyframes">
+            <h2>4. Keyframes</h2>
+
+            <p>
+                A regra @keyframes permite definir os diferentes estados
+                de uma animação, determinando como o elemento deverá se
+                comportar durante sua execução.
+            </p>
+
+            <h3>From e To</h3>
+
+            <p>
+                Representam o estado inicial e final de uma animação.
+            </p>
+
+            <div class="demonstracao keyframe-demo">
+                <div class="item">Movimento</div>
+            </div>
+
+            <pre class="codigo"><code>@keyframes movimento {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(200px);
+    }
+}
+
+.item {
+    animation: movimento 2s;
+}</code></pre>
+
+            <h3>Porcentagens</h3>
+
+            <p>
+                Permitem definir diferentes etapas da animação,
+                incluindo estados intermediários.
+            </p>
+
+            <div class="demonstracao etapas-demo">
+                <div class="item">Movimento</div>
+            </div>
+
+            <pre class="codigo"><code>@keyframes movimento {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(100px);
+    }
+
+    100% {
+        transform: translateX(200px);
+    }
+}
+
+.item {
+    animation: movimento 3s infinite;
+}</code></pre>
+        </section>
+
+        <!-- ANIMATION PROPERTIES -->
+
+        <section id="animation">
+            <h2>5. Animation Properties</h2>
+
+            <p>
+                As propriedades animation controlam a execução das animações
+                criadas com @keyframes.
+            </p>
+
+            <h3>Animation Name e Duration</h3>
+
+            <p>
+                Definem o nome da animação e o tempo necessário para
+                completar um ciclo.
+            </p>
+
+            <div class="demonstracao animation-demo">
+                <div class="item">Mudança de cor</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    animation-name: mudar-cor;
+    animation-duration: 3s;
+}
+
+@keyframes mudar-cor {
+    0% {
+        background-color: purple;
+    }
+
+    50% {
+        background-color: orange;
+    }
+
+    100% {
+        background-color: purple;
+    }
+}</code></pre>
+
+            <h3>Animation Direction</h3>
+
+            <p>
+                Define a direção em que a animação será executada.
+            </p>
+
+            <ul>
+                <li><strong>normal:</strong> executa normalmente.</li>
+                <li><strong>reverse:</strong> executa na direção inversa.</li>
+                <li><strong>alternate:</strong> alterna entre normal e reverso.</li>
+                <li><strong>alternate-reverse:</strong> começa no sentido reverso e alterna.</li>
+            </ul>
+
+            <div class="demonstracao direction-demo">
+                <div class="item">Normal</div>
+                <div class="item">Reverse</div>
+                <div class="item">Alternate</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    animation: girar 2s infinite;
+}
+
+.item:nth-child(2) {
+    animation-direction: reverse;
+}
+
+.item:nth-child(3) {
+    animation-direction: alternate;
+}</code></pre>
+
+            <h3>Animation Fill Mode</h3>
+
+            <p>
+                Controla como o elemento ficará antes e depois da execução
+                da animação.
+            </p>
+
+            <ul>
+                <li><strong>none:</strong> não mantém os estilos da animação.</li>
+                <li><strong>forwards:</strong> mantém o estado final.</li>
+                <li><strong>backwards:</strong> aplica o estado inicial durante o atraso.</li>
+                <li><strong>both:</strong> combina forwards e backwards.</li>
+            </ul>
+
+            <div class="demonstracao fill-demo">
+                <div class="item">Aparecendo</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    animation: aparecer 2s;
+    animation-fill-mode: forwards;
+}</code></pre>
+
+            <h3>Animation Play State</h3>
+
+            <p>
+                Permite controlar se uma animação está sendo executada
+                ou pausada.
+            </p>
+
+            <div class="demonstracao play-demo">
+                <div class="item">Passe o mouse para pausar</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    animation: girar 3s infinite;
+}
+
+.item:hover {
+    animation-play-state: paused;
+}</code></pre>
+
+            <h3>Animation (Atalho)</h3>
+
+            <pre class="codigo"><code>.item {
+    animation: movimento 2s ease 1s infinite alternate;
+}
+
+/* name | duration | timing-function |
+   delay | iteration-count | direction */</code></pre>
+        </section>
+
+        <!-- TIMING FUNCTIONS -->
+
+        <section id="timing">
+            <h2>6. Timing Functions</h2>
+
+            <p>
+                Controlam a velocidade da animação durante sua execução,
+                determinando como ela acelera e desacelera.
+            </p>
+
+            <h3>Linear</h3>
+            <p>Mantém uma velocidade constante durante todo o movimento.</p>
+
+            <h3>Ease</h3>
+            <p>Começa devagar, acelera e termina devagar.</p>
+
+            <h3>Ease In</h3>
+            <p>Começa devagar e acelera ao longo da animação.</p>
+
+            <h3>Ease Out</h3>
+            <p>Começa rápido e desacelera no final.</p>
+
+            <h3>Ease In Out</h3>
+            <p>Começa devagar, acelera no meio e desacelera no final.</p>
+
+            <div class="demonstracao timing-demo">
+                <div class="item linear">Linear</div>
+                <div class="item ease">Ease</div>
+                <div class="item ease-in">Ease In</div>
+                <div class="item ease-out">Ease Out</div>
+                <div class="item ease-in-out">Ease In Out</div>
+            </div>
+
+            <pre class="codigo"><code>.linear {
+    animation-timing-function: linear;
+}
+
+.ease {
+    animation-timing-function: ease;
+}
+
+.ease-in {
+    animation-timing-function: ease-in;
+}
+
+.ease-out {
+    animation-timing-function: ease-out;
+}
+
+.ease-in-out {
+    animation-timing-function: ease-in-out;
+}</code></pre>
+
+            <h3>Cubic Bezier</h3>
+
+            <p>
+                Permite criar curvas de velocidade personalizadas,
+                controlando como a animação acelera e desacelera.
+            </p>
+
+            <pre class="codigo"><code>.item {
+    animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+}</code></pre>
+        </section>
+
+        <!-- DELAYS E ITERATIONS -->
+
+        <section>
+            <h2>7. Delays e Iterations</h2>
+
+            <h3>Animation Delay</h3>
+
+            <p>
+                Define o tempo que a animação aguardará antes de começar.
+            </p>
+
+            <div class="demonstracao delay-animation-demo">
+                <div class="item">0s</div>
+                <div class="item">1s</div>
+                <div class="item">2s</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    animation: aparecer 2s;
+}
+
+.item:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.item:nth-child(3) {
+    animation-delay: 2s;
+}</code></pre>
+
+            <h3>Animation Iteration Count</h3>
+
+            <p>
+                Determina quantas vezes uma animação será executada.
+            </p>
+
+            <div class="demonstracao iteration-demo">
+                <div class="item">1 vez</div>
+                <div class="item">3 vezes</div>
+                <div class="item">Infinito</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    animation-iteration-count: 1;
+}
+
+.item:nth-child(2) {
+    animation-iteration-count: 3;
+}
+
+.item:nth-child(3) {
+    animation-iteration-count: infinite;
+}</code></pre>
+        </section>
+
+        <!-- MICROINTERAÇÕES -->
+
+        <section>
+            <h2>9. Microinterações</h2>
+
+            <p>
+                São pequenas respostas visuais que acontecem durante
+                a interação do usuário com uma interface.
+            </p>
+
+            <h3>Feedback de botão</h3>
+
+            <p>
+                O botão muda de tamanho e cor quando o usuário passa
+                o cursor ou clica nele.
+            </p>
+
+            <div class="demonstracao button-demo">
+                <button>Clique aqui</button>
+            </div>
+
+            <h3>Indicador de carregamento</h3>
+
+            <p>
+                Um elemento pode utilizar uma animação contínua para
+                representar um processo que está acontecendo.
+            </p>
+
+            <div class="demonstracao loading-demo">
+                <div class="item"></div>
+                <span>Carregando...</span>
+            </div>
+
+            <pre class="codigo"><code>@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.item {
+    animation: girar 1s linear infinite;
+}</code></pre>
+        </section>
+
+        <!-- RESPONSIVIDADE -->
+
+        <section id="responsividade">
+            <h2>10. Animações responsivas</h2>
+
+            <p>
+                As animações podem ser adaptadas de acordo com o tamanho
+                da tela, evitando movimentos exagerados ou inadequados
+                em dispositivos menores.
+            </p>
+
+            <p>
+                No exemplo abaixo, o deslocamento do elemento diminui
+                quando a largura da tela é menor que 600 pixels.
+            </p>
+
+            <div class="demonstracao responsive-demo">
+                <div class="item">Movimento</div>
+            </div>
+
+            <pre class="codigo"><code>@keyframes movimento {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(200px);
+    }
+}
+
+@media (max-width: 600px) {
+    @keyframes movimento {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(80px);
+        }
+    }
+}</code></pre>
+
+            <div class="explicacao">
+                O objetivo é adequar a intensidade e o comportamento
+                das animações às diferentes condições de utilização.
+            </div>
+        </section>
+
+        <!-- REDUCED MOTION -->
+
+        <section>
+            <h2>11. Prefers Reduced Motion</h2>
+
+            <p>
+                Essa funcionalidade permite identificar se o usuário
+                configurou seu dispositivo para reduzir movimentos
+                e animações.
+            </p>
+
+            <p>
+                Quando essa preferência está ativada, é possível
+                desabilitar animações não essenciais.
+            </p>
+
+            <div class="demonstracao reduced-demo">
+                <div class="item">Movimento</div>
+            </div>
+
+            <pre class="codigo"><code>.item {
+    animation: movimento 3s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .item {
+        animation: none;
+    }
+}</code></pre>
+
+            <div class="explicacao">
+                Para testar esse comportamento, é necessário ativar
+                a opção de redução de movimento nas configurações
+                de acessibilidade do sistema operacional.
+            </div>
+        </section>
+
+        <!-- CONCLUSÃO -->
+
+        <section>
+            <h2>🎯 Conclusão</h2>
+
+            <p>
+                As animações CSS permitem criar interfaces mais dinâmicas,
+                proporcionando feedback visual e melhorando a interação
+                do usuário com os elementos da página.
+            </p>
+
+            <p>
+                Neste nível, foram apresentados os principais recursos
+                para construir transições, transformações e animações
+                personalizadas.
+            </p>
+
+            <p>
+                Com esses conhecimentos, será possível desenvolver
+                interfaces mais interativas e explorar recursos
+                ainda mais avançados no próximo nível do bootcamp.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>CSS Bootcamp | Nível 04 - Animações</p>
+        <p>Aprendendo CSS, um movimento por vez.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,410 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+}
+
+header {
+    background-color: #7545a8;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+nav {
+    background-color: #222;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+main {
+    width: 85%;
+    margin: 30px auto;
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #7545a8;
+    border-bottom: 2px solid #7545a8;
+    padding-bottom: 10px;
+}
+
+h3 {
+    margin-top: 25px;
+}
+
+.demonstracao {
+    background-color: #ddd;
+    padding: 20px;
+    margin: 15px 0;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.item {
+    background-color: #7545a8;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.codigo {
+    background-color: #222;
+    color: #9cdcfe;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.codigo code {
+    color: #9cdcfe;
+}
+
+.explicacao {
+    background-color: #eee6f7;
+    padding: 12px;
+    border-left: 4px solid #7545a8;
+    margin: 15px 0;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* TRANSITIONS */
+
+.transition-demo .item {
+    transition: background-color 0.5s;
+}
+
+.transition-demo .item:hover {
+    background-color: #e09c32;
+}
+
+.duration-demo .item {
+    transition: transform 0.2s;
+}
+
+.duration-demo .item:nth-child(2) {
+    transition-duration: 1s;
+}
+
+.duration-demo .item:hover {
+    transform: translateY(-15px);
+}
+
+.delay-demo .item {
+    transition: transform 0.5s;
+}
+
+.delay-demo .item:nth-child(2) {
+    transition-delay: 1s;
+}
+
+.delay-demo .item:hover {
+    transform: scale(1.2);
+}
+
+/* TRANSFORM */
+
+.translate-demo .item:hover {
+    transform: translate(20px, -15px);
+}
+
+.scale-demo .item:hover {
+    transform: scale(1.3);
+}
+
+.rotate-demo .item:hover {
+    transform: rotate(45deg);
+}
+
+.skew-demo .item:hover {
+    transform: skew(20deg);
+}
+
+.combine-demo .item:hover {
+    transform: translateY(-10px) rotate(10deg) scale(1.1);
+}
+
+/* KEYFRAMES */
+
+@keyframes movimento {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(200px);
+    }
+}
+
+.keyframe-demo .item {
+    animation: movimento 2s;
+}
+
+@keyframes movimento-etapas {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(100px);
+    }
+
+    100% {
+        transform: translateX(200px);
+    }
+}
+
+.etapas-demo .item {
+    animation: movimento-etapas 3s infinite;
+}
+
+/* ANIMATION PROPERTIES */
+
+@keyframes mudar-cor {
+    0% {
+        background-color: #7545a8;
+    }
+
+    50% {
+        background-color: #e09c32;
+    }
+
+    100% {
+        background-color: #7545a8;
+    }
+}
+
+.animation-demo .item {
+    animation-name: mudar-cor;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.direction-demo .item {
+    animation: girar 2s infinite;
+}
+
+.direction-demo .item:nth-child(2) {
+    animation-direction: reverse;
+}
+
+.direction-demo .item:nth-child(3) {
+    animation-direction: alternate;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fill-demo .item {
+    animation: aparecer 2s;
+    animation-fill-mode: forwards;
+}
+
+.play-demo .item {
+    animation: girar 3s infinite;
+}
+
+.play-demo .item:hover {
+    animation-play-state: paused;
+}
+
+/* TIMING FUNCTIONS */
+
+@keyframes deslocar {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(180px);
+    }
+}
+
+.timing-demo {
+    display: block;
+}
+
+.timing-demo .item {
+    width: 90px;
+    margin: 10px 0;
+    animation: deslocar 3s infinite alternate;
+}
+
+.linear {
+    animation-timing-function: linear !important;
+}
+
+.ease {
+    animation-timing-function: ease !important;
+}
+
+.ease-in {
+    animation-timing-function: ease-in !important;
+}
+
+.ease-out {
+    animation-timing-function: ease-out !important;
+}
+
+.ease-in-out {
+    animation-timing-function: ease-in-out !important;
+}
+
+/* DELAY E ITERATIONS */
+
+.iteration-demo .item {
+    animation: girar 2s;
+}
+
+.iteration-demo .item:nth-child(2) {
+    animation-iteration-count: 3;
+}
+
+.iteration-demo .item:nth-child(3) {
+    animation-iteration-count: infinite;
+}
+
+.delay-animation-demo .item {
+    animation: aparecer 2s;
+}
+
+.delay-animation-demo .item:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.delay-animation-demo .item:nth-child(3) {
+    animation-delay: 2s;
+}
+
+/* HOVER E MICROINTERAÇÕES */
+
+.hover-demo .item {
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.hover-demo .item:hover {
+    transform: scale(1.1);
+    background-color: #e09c32;
+}
+
+.button-demo button {
+    background-color: #7545a8;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.button-demo button:hover {
+    background-color: #56317e;
+    transform: scale(1.05);
+}
+
+.button-demo button:active {
+    transform: scale(0.95);
+}
+
+.loading-demo .item {
+    animation: girar 1s linear infinite;
+    width: 50px;
+    height: 50px;
+    border: 6px solid #ddd;
+    border-top-color: #7545a8;
+    border-radius: 50%;
+    padding: 0;
+}
+
+/* ANIMAÇÕES RESPONSIVAS */
+
+@keyframes movimento-responsivo {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(200px);
+    }
+}
+
+.responsive-demo .item {
+    animation: movimento-responsivo 2s infinite alternate;
+}
+
+@media (max-width: 600px) {
+    .responsive-demo .item {
+        animation-name: movimento-responsivo;
+        animation-duration: 3s;
+    }
+
+    @keyframes movimento-responsivo {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(80px);
+        }
+    }
+}
+
+/* PREFERS REDUCED MOTION */
+
+.reduced-demo .item {
+    animation: movimento-etapas 3s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reduced-demo .item {
+        animation: none;
+    }
+}
