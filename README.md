@@ -10,9 +10,6 @@ Aprenda, pratique e domine o CSS através de uma jornada dividida em cinco níve
 <br>
 
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![Status](https://img.shields.io/badge/STATUS-EM%20DESENVOLVIMENTO-yellow?style=for-the-badge)
-![Learning](https://img.shields.io/badge/FOCO-APRENDIZADO-success?style=for-the-badge)
-
 </div>
 
 ---
